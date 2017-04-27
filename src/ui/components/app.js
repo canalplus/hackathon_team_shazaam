@@ -26,7 +26,7 @@ export default class App extends React.Component {
       <Player
         src='assets/videos/StudioCanalTheThirdMan.mp4'
         onVideoLoaded={() => this.onVideoLoaded()} />
-    </div>;
+</div>;
   }
 
   onVideoLoaded() {
