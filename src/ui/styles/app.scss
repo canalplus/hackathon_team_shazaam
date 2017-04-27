@@ -1,3 +1,80 @@
 h1 {
   color: blue;
 }
+
+.loader-container {
+    position: absolute;
+    float: left;
+    bottom: 10px;
+
+    border: 1px solid #f6f;
+    border-top-color: #0e0;
+    border-right-color: #0dd;
+    border-bottom-color: #f90;
+    border-radius: 50%;
+    background-color: black;
+
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-duration: 0.5s;
+}
+
+.sub-container {
+    height: 32px;
+    width: 32px;
+    animation-name: plus;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+    border-radius: 50%;
+}
+
+.loader {
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+@keyframes plus {
+    0% {
+        color: white;
+        background-color: black;
+    }
+    50% {
+        color: black;
+        background-color: white;
+    }
+    100% {
+        color: white;
+        background-color: black;
+    }
+}
+
+@keyframes loading {
+    0% {
+        border: 1px solid #f6f;
+        border-top-color: #0e0;
+        border-right-color: #0dd;
+        border-bottom-color: #f90;
+    }
+    25% {
+        border: 1px solid #f90;
+        border-top-color: #f6f;
+        border-right-color: #0e0;
+        border-bottom-color: #0dd;
+    }
+
+    50% {
+        border: 1px solid #0dd;
+        border-top-color: #f90;
+        border-right-color: #f6f;
+        border-bottom-color: #0e0;
+    }
+
+    75% {
+        border: 1px solid #0e0;
+        border-top-color: #0dd;
+        border-right-color: #f90;
+        border-bottom-color: #f6f;
+    }
+}
