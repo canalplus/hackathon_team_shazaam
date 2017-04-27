@@ -2,7 +2,8 @@ import React from 'react';
 
 export default class PlayerInformations extends React.Component {
   render() {
-    return <div className='player-informations-container'>
+    const className = `player-informations-container ${this.props.display ? '' : 'player-informations-container--hide'}`;
+    return <div className={className}>
       <div className='player-informations'>
         <div className="player-description">
           <div className="title-wrapper">

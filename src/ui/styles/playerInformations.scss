@@ -1,5 +1,3 @@
-$TRANSITION_DURATION: 300ms;
-
 .player-informations-container {
   position: absolute;
   top: 0;
@@ -15,8 +13,12 @@ $TRANSITION_DURATION: 300ms;
     rgba(0, 0, 0, 0)
   );
 
-  &--animate {
-    transition: transition(opacity $TRANSITION_DURATION / 2);
+  opacity: 1;
+  transition: opacity ease-out 5000;
+
+  &--hide {
+    opacity: 0;
+    transition: opacity ease-out 300;
   }
 }
 
