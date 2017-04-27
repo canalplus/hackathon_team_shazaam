@@ -30,6 +30,7 @@ export default class App extends React.Component {
     return <div>
       <Welcome display={this.state.displayWelcomeScreen} />
       <Player
+        ref={(player) => { this.player = player; }}
         video={this.props.videos[this.state.video]}
         onVideoLoaded={() => this.onVideoLoaded()} />
       <Loader display={this.state.isSearching} />
@@ -44,18 +45,32 @@ export default class App extends React.Component {
   // P+ | fn + Up
   @keydown(33)
   onNextVideo() {
-    this.setState({ video: ++this.state.video % this.props.videos.length });
+    this.setState({
+      video: ++this.state.video % this.props.videos.length,
+      isSearching: false,
+      isSearchDone: false,
+      music: null
+    });
   }
 
   // P- | fn + Down
   @keydown(34)
   onPrevVideo() {
-    this.setState({ video: (--this.state.video + this.props.videos.length) % this.props.videos.length });
+    this.setState({
+      video: (--this.state.video + this.props.videos.length) % this.props.videos.length,
+      isSearching: false,
+      isSearchDone: false,
+      music: null
+    });
   }
 
   @keydown('s')
   search() {
-    var myRequest = new Request('http://localhost:3001/id/lalaland/34');
+    const video = this.props.videos[this.state.video];
+    const position = parseInt(this.player.video.currentTime, 10);
+    var myRequest = new Request(
+      `http://localhost:3001/id/${video.shortName}/${position}`
+    );
 
     this.setState({
       isSearching: true,
