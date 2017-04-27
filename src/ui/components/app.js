@@ -22,6 +22,7 @@ export default class App extends React.Component {
 
   render() {
     return <div>
+        <Loader />
       <Welcome display={this.state.displayWelcomeScreen} />
       <Player
         src='assets/videos/StudioCanalTheThirdMan.mp4'
