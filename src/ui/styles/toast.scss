@@ -38,7 +38,7 @@
     right: 10px;
 }
 .hearicon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     opacity: 1;
     animation-name: hearing;
     animation-duration: 2s;
@@ -59,6 +59,8 @@
 .title {
     text-align: left;
     display: block;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .artist {
