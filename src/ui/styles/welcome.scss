@@ -1,0 +1,16 @@
+.welcome {
+  position: absolute;
+  background: no-repeat center center url('../assets/img/welcome.png') black;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+}
+
+.welcome-display {
+  opacity: 1;
+}
+
+.welcome-hide {
+  opacity: 0;
+  transition: opacity ease-out 2s;
+}
