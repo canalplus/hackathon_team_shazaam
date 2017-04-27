@@ -1,6 +1,5 @@
 videos
 node_modules
 npm-debug.log
-scripts/postParse/*.mp3
-scripts/sources/*.mp4
-
+script/postParse/*.mp3
+script/sources/*.mp4
