@@ -44,13 +44,23 @@ export default class App extends React.Component {
   // P+ | fn + Up
   @keydown(33)
   onNextVideo() {
-    this.setState({ video: ++this.state.video % this.props.videos.length });
+    this.setState({
+      video: ++this.state.video % this.props.videos.length,
+      isSearching: false,
+      isSearchDone: false,
+      music: null
+    });
   }
 
   // P- | fn + Down
   @keydown(34)
   onPrevVideo() {
-    this.setState({ video: (--this.state.video + this.props.videos.length) % this.props.videos.length });
+    this.setState({
+      video: (--this.state.video + this.props.videos.length) % this.props.videos.length,
+      isSearching: false,
+      isSearchDone: false,
+      music: null
+    });
   }
 
   @keydown('s')
