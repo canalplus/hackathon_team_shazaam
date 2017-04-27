@@ -32,7 +32,7 @@ export const videos = [
     "shortName": "ChariotsOfFire",
     "subtitle": "Film",
     "title": "Chariots of fire",
-    "url": "assets/videos/ChariotsOfFireTheme.mp4"
+    "url": "assets/videos/ChariotsOfFire.mp4"
   },
   {
     "logo": "src/ui/logo/canal.jpg",
