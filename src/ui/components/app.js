@@ -6,7 +6,7 @@ import Toast from './toast.js';
 export default class App extends React.Component {
   render() {
     return <div>
-      <Player src='assets/videos/StudioCanalTheThirdMan.mp4' />
+      <Toast src="./../assets/img/album.jpg"/>
     </div>;
   }
 }
