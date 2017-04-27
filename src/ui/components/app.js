@@ -20,7 +20,7 @@ export default class App extends React.Component {
       }
       // P- | fn + Down
       else if (e.keyCode === 34) {
-        this.setState({ video: --this.state.video % this.props.videos.length });
+        this.setState({ video: (--this.state.video + this.props.videos.length) % this.props.videos.length });
       }
     };
   }
