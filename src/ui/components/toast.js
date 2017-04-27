@@ -20,7 +20,7 @@ export default class Toast extends React.Component {
 
     return <div className={className}>
       <div className="toast-picture">
-        <img className="album" src={this.props.src} alt="test"/>
+        <img className="album" src={this.props.src} alt="album"/>
       </div>
         <div className="toast-infos">
             <div className="infos-container">
