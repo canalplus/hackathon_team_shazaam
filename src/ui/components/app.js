@@ -13,8 +13,8 @@ export default class App extends React.Component {
       video: 0,
       displayWelcomeScreen: true,
       isSearching: false,
-      isDone: false,
-      result: null
+      isSearchDone: false,
+      music: null
     };
   }
 
@@ -32,6 +32,7 @@ export default class App extends React.Component {
         video={this.props.videos[this.state.video]}
         onVideoLoaded={() => this.onVideoLoaded()} />
       <Loader display={this.state.isSearching} />
+      <Toast music={this.state.music} display={this.state.isSearchDone} />
     </div>;
   }
 
@@ -52,21 +53,40 @@ export default class App extends React.Component {
   }
 
   @keydown('s')
-  activateLoader() {
+  search() {
     var myRequest = new Request('http://localhost:3001/id/lalaland/34');
 
-    this.setState({ isSearching: true });
-    fetch(myRequest)
+    this.setState({
+      isSearching: true,
+      isSearchDone: false,
+      music: null,
+    });
+
+    this.promise = fetch(myRequest)
       .then((response) => {
         if (response.status === 200) {
-          this.setState({
-            isSearching: false,
-            isDone: true
-          });
+          return response.json();
         }
         else {
+          this.setState({ isSearching: false });
           throw new Error('Something went wrong on api server!');
         }
+      })
+      .then(data => {
+        this.setState({
+          isSearching: false,
+          isSearchDone: true,
+          music: (data && data.metadata && data.metadata.music && data.metadata.music[0]) || null
+        });
       });
+  }
+
+  @keydown(27)
+  hideResult() {
+    this.setState({
+      isSearching: false,
+      isSearchDone: false,
+      music: null
+    });
   }
 }
