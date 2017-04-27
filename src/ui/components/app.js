@@ -22,7 +22,7 @@ export default class App extends React.Component {
 
   render() {
     return <div>
-      <Toast src='assets/img/album.jpg' />
+      <Loader />
       <Welcome display={this.state.displayWelcomeScreen} />
       <Player
         src='assets/videos/StudioCanalTheThirdMan.mp4'
