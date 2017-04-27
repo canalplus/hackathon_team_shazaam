@@ -1,0 +1,121 @@
+[
+  {
+    "logo": "src/ui/logo/TF1.jpg",
+    "shortName": "twizy",
+    "subtitle": "publicité renault",
+    "title": "la pub twizy",
+    "url": "script/sources/twizy.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "CANALKITCHEN",
+    "subtitle": "Vidéo commerciale",
+    "title": "Publicité CANAL KITCHEN",
+    "url": "script/sources/CANALKITCHEN.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "lalaland",
+    "subtitle": "Comédie musicale",
+    "title": "Scène ouverture Lalaland",
+    "url": "script/sources/lalaland.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "OnceUponatimeinAmerica",
+    "subtitle": "Drame/Policier",
+    "title": "Noodles et Déborah",
+    "url": "script/sources/OnceUponatimeinAmerica.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "ChariotsOfFire",
+    "subtitle": "Film",
+    "title": "Chariots of fire",
+    "url": "script/sources/ChariotsOfFireTheme.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "DriveNightcallScene",
+    "subtitle": "Film",
+    "title": "Drive",
+    "url": "script/sources/DriveNightcallScene.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "FastandFurious7EndingScene",
+    "subtitle": "Film",
+    "title": "Fast and furious 7",
+    "url": "script/sources/FastandFurious7EndingScene.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "Flashdance",
+    "subtitle": "Film",
+    "title": "Flashdance",
+    "url": "script/sources/Flashdance.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "GladiatorEnding",
+    "subtitle": "Film",
+    "title": "Gladiator",
+    "url": "script/sources/GladiatorEnding.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "PowerRangers2017",
+    "subtitle": "Film",
+    "title": "Power Rangers",
+    "url": "script/sources/PowerRangers2017.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "RiskyBusinessDanceScene",
+    "subtitle": "Film",
+    "title": "Ricky Business",
+    "url": "script/sources/RiskyBusinessDanceScene.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canal.jpg",
+    "shortName": "Trolls",
+    "subtitle": "Film",
+    "title": "Trolls",
+    "url": "script/sources/Trolls.mp4"
+  },
+  {
+    "logo": "src/ui/logo/cineplus.jpg",
+    "shortName": "HighFidelity",
+    "subtitle": "Film comédie",
+    "title": "High Fidelity",
+    "url": "script/sources/HighFidelity.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canalcinema.jpg",
+    "shortName": "IronMan2",
+    "subtitle": "Film Action",
+    "title": "Iron Man 2",
+    "url": "script/sources/IronMan2.mp4"
+  },
+  {
+    "logo": "src/ui/logo/cineclassic.jpg",
+    "shortName": "StudioCanalTheThirdMan",
+    "subtitle": "Film Drame",
+    "title": "Le troisième homme",
+    "url": "script/sources/StudioCanalTheThirdMan.mp4"
+  },
+  {
+    "logo": "src/ui/logo/canalcinema.jpg",
+    "shortName": "DespicableMe3",
+    "subtitle": "Film Animation",
+    "title": "Moi Moche et Méchant 3 (2017)",
+    "url": "script/sources/DespicableMe3.mp4"
+  },
+  {
+    "logo": "src/ui/logo/cineclassic.jpg",
+    "shortName": "Shrek2",
+    "subtitle": "Film Animation",
+    "title": "Shrek 2",
+    "url": "script/sources/Shrek2.mp4"
+  }
+]

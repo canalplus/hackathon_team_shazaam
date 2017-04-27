@@ -17,7 +17,8 @@ do
 
 	for i in `seq 0 $((duration/snippet))`
 	do
-	  	ffmpeg -y -ss $((i*15)) -t 15 -i $destdir/$file.mp3 $destdir/$file-$i.mp3 > /dev/null 2>&1
+        destfile=`echo -n $file|sed 's/\.mp4//g'`
+	  	ffmpeg -y -ss $((i*15)) -t 15 -i $destdir/$file.mp3 $destdir/$destfile-$i.mp3 > /dev/null 2>&1
 	done
 done
 
