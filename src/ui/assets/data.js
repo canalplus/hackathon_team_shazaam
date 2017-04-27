@@ -10,7 +10,7 @@ export const videos = [
     "logo": "src/ui/logo/canal.jpg",
     "shortName": "CANALKITCHEN",
     "subtitle": "Publicité",
-    "title": "Kaboul Kitchen",
+    "title": "Canal Kitchen",
     "url": "assets/videos/CANALKITCHEN.mp4"
   },
   {
