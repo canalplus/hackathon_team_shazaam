@@ -11,7 +11,10 @@ export default class App extends React.Component {
     this.timeout = true;
     this.state = {
       video: 0,
-      displayWelcomeScreen: true
+      displayWelcomeScreen: true,
+      isSearching: false,
+      isDone: false,
+      result: null
     };
 
     document.onkeydown = (e) => {
@@ -35,6 +38,7 @@ export default class App extends React.Component {
 
   render() {
     return <div>
+      <Loader className={this.props.isSearching ? '' : 'hidden'} />
       <Welcome display={this.state.displayWelcomeScreen} />
       <Player
         video={this.props.videos[this.state.video]}
@@ -48,32 +52,30 @@ export default class App extends React.Component {
 
   @keydown('s')
   activateLoader(){
-      console.log('s');
 
-      var myRequest = new Request('localhost:3001/id/snippet/123');
-
+      var myRequest = new Request('http://localhost:3001/id/lalaland/34');
       var myURL = myRequest.url; // http://localhost/flowers.jpg
       var myMethod = myRequest.method; // GET
       //var myCred = myRequest.credentials; // omit
-      var isSearching = true;
+      this.setState({isSearching: true});
       fetch(myRequest)
-      .then(function(response) {
+      .then((response) => {
             if(response.status == 200){
-                isSearching = false;
+                this.setState({isSearching: false, isDone: true});
                 return response.json();
             }
             else throw new Error('Something went wrong on api server!');
         })
-        .then(function(response) {
+        .then((response) => {
             console.debug(response);
-            isSearching = false;
-        })
-        .catch(function(error) {
-            console.error(error);
+            this.setState({isSearching: false});
         });
 
-        if(isSearching) {
+        if(this.state.isSearching) {
             return <Loader />
+        }
+        if(this.state.isDone) {
+            return <Toast />
         }
 
   }

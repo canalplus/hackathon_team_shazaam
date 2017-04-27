@@ -9,6 +9,10 @@ body {
   margin: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 @font-face {
   font-family: "CanalBoldItalique";
   src: url("../assets/fonts/CanalBoldItalique.ttf");
