@@ -64,9 +64,16 @@ function identify(data, options, cb) {
   }, cb);
 }
 
+<<<<<<< HEAD
+
+app.get('/id/:content/:offset', function (req, res) {
+  var bitmap = fs.readFileSync('../php/'+req.params.content+'.mp3');
+
+=======
 app.get('/id/:content/:offset', function (req, res) {
   var _snippet_id = Math.floor(req.params.offset / 15);
   var bitmap = fs.readFileSync('../script/postParse/'+req.params.content+'-'+_snippet_id+'.mp3');
+>>>>>>> 8ad6464819d2c5423eaf7b3eeddb3a45e2dfbe3a
   identify(new Buffer(bitmap), defaultOptions, function (err, httpResponse, body) {
     if (err) {
       console.log(err);
