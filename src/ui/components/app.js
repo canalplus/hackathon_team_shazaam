@@ -1,7 +1,10 @@
 import React from 'react';
+import Player from './player.js';
 
 export default class App extends React.Component {
   render() {
-    return <h1 className="title">Hello World</h1>
+    return <div>
+      <Player />
+    </div>;
   }
 }
