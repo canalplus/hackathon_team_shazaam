@@ -2,6 +2,6 @@ import React from 'react';
 
 export default class Player extends React.Component {
   render() {
-    return <video src='assets/videos/StudioCanalTheThirdMan.mp4' autoPlay="true" />
+    return <video src={this.props.src} autoPlay="true" />
   }
 }
