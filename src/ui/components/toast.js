@@ -8,7 +8,7 @@ export default class Toast extends React.Component {
       return <div className={className}>
         <div className="toast-infos">
           <div className="infos-container">
-            <span className="title">Désolé, nous n'avons pas trouvé de réponse</span>
+            <span className="error">Désolé, nous n'avons pas trouvé de réponse.</span>
           </div>
         </div>
       </div>;
