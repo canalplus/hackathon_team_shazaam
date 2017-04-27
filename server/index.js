@@ -4,6 +4,7 @@ var crypto = require('crypto');
 //npm install request
 var request = require('request');
 var express = require('express');
+var cors = require('cors')
 var app = express();
 var port = 3001;
 
@@ -63,6 +64,8 @@ function identify(data, options, cb) {
     formData: formData
   }, cb);
 }
+
+app.use(cors());
 
 app.get('/id/:content/:offset', function (req, res) {
   var _snippet_id = Math.floor(req.params.offset / 15);
