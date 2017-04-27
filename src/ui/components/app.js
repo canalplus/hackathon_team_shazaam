@@ -10,7 +10,19 @@ export default class App extends React.Component {
     super(props);
     this.timeout = true;
     this.state = {
+      video: 0,
       displayWelcomeScreen: true
+    };
+
+    document.onkeydown = (e) => {
+      // P+ | fn + Up
+      if (e.keyCode === 33) {
+        this.setState({ video: ++this.state.video % this.props.videos.length });
+      }
+      // P- | fn + Down
+      else if (e.keyCode === 34) {
+        this.setState({ video: (--this.state.video + this.props.videos.length) % this.props.videos.length });
+      }
     };
   }
 
@@ -25,7 +37,7 @@ export default class App extends React.Component {
     return <div>
       <Welcome display={this.state.displayWelcomeScreen} />
       <Player
-        src='assets/videos/StudioCanalTheThirdMan.mp4'
+        video={this.props.videos[this.state.video]}
         onVideoLoaded={() => this.onVideoLoaded()} />
 </div>;
   }
