@@ -3,6 +3,9 @@ var fs = require('fs');
 var crypto = require('crypto');
 //npm install request
 var request = require('request');
+var express = require('express');
+var app = express();
+var port = 3001;
 
 // Replace "###...###" below with your project's host, access_key and access_secret.
 var defaultOptions = {
@@ -24,6 +27,7 @@ function sign(signString, accessSecret) {
     .update(new Buffer(signString, 'utf-8'))
     .digest().toString('base64');
 }
+
 
 /**
  * Identifies a sample of bytes
@@ -60,9 +64,27 @@ function identify(data, options, cb) {
   }, cb);
 }
 
-var bitmap = fs.readFileSync('../php/snippet.mp3');
 
-identify(new Buffer(bitmap), defaultOptions, function (err, httpResponse, body) {
-  if (err) console.log(err);
-  console.log(body);
+app.get('/id/:content/:offset', function (req, res) {
+  var bitmap = fs.readFileSync('../php/'+req.params.content+'.mp3');
+
+  identify(new Buffer(bitmap), defaultOptions, function (err, httpResponse, body) {
+    if (err) {
+      console.log(err);
+      res.status(500).send('error: '+err);
+    } else {
+      try {
+        console.log(body);
+        res.json(JSON.parse(body));
+      } catch(e) {
+        console.log(e);
+        res.status(500).send('error: '+e);
+      }
+    }
+  });
 });
+
+app.listen(port, function () {
+  console.log('Example app listening on port '+port+'!');
+});
+
