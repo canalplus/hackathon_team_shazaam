@@ -1,8 +1,20 @@
 @import './app.scss';
 @import './loader.scss';
+@import './player.scss';
+@import './playerInformations.scss';
 @import './toast.scss';
 @import './welcome.scss';
 
 body {
   margin: 0;
+}
+
+@font-face {
+  font-family: "CanalBoldItalique";
+  src: url("../assets/fonts/CanalBoldItalique.ttf");
+}
+
+@font-face {
+  font-family: "DroidSans";
+  src: url("../assets/fonts/DroidSans.ttf");
 }
