@@ -14,7 +14,8 @@ export default class App extends React.Component {
       displayWelcomeScreen: true,
       isSearching: false,
       isSearchDone: false,
-      music: null
+      music: null,
+      albumImageUrl: null
     };
   }
 
@@ -32,7 +33,7 @@ export default class App extends React.Component {
         video={this.props.videos[this.state.video]}
         onVideoLoaded={() => this.onVideoLoaded()} />
       <Loader display={this.state.isSearching} />
-      <Toast music={this.state.music} display={this.state.isSearchDone} />
+      <Toast music={this.state.music} src={this.state.albumImageUrl} display={this.state.isSearchDone} />
     </div>;
   }
 
@@ -78,6 +79,27 @@ export default class App extends React.Component {
           isSearchDone: true,
           music: (data && data.metadata && data.metadata.music && data.metadata.music[0]) || null
         });
+
+        var imageRequest = new Request('https://api.spotify.com/v1/tracks?ids='+data.metadata.music[0].external_metadata.spotify.track.id);
+
+        this.promise = fetch(imageRequest)
+          .then((response) => {
+            if (response.status === 200) {
+              return response.json();
+            }
+            else {
+
+              throw new Error('Something went wrong on api server!');
+            }
+          })
+          .then(data => {
+              console.log(data);
+            this.setState({
+              albumImageUrl: data.tracks[0].album.images[1].url || null
+            });
+
+          });
+
       });
   }
 
