@@ -4,7 +4,8 @@
   "description": "Shazaam like for set top boxes",
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-keydown": "^1.7.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
