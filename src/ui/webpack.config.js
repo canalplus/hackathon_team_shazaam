@@ -24,6 +24,15 @@ module.exports = {
         test: /\.(otf|eot|ttf|woff|woff2|png|jpe?g|tiff|gif)$/,
         loader: 'url-loader?limit=100000',
       },
+      {
+          test: /\.jsx?$/,
+          loader: 'babel-loader',
+          query: {
+            cacheDirectory: true,
+            plugins: ['transform-decorators-legacy' ],
+            presets: ['es2015', 'react']
+          }
+        }
     ]
   },
 };
