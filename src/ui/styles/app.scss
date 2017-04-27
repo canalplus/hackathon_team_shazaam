@@ -2,6 +2,7 @@ h1 {
   color: blue;
 }
 
+// CSS for Loader component
 .loader-container {
     position: absolute;
     float: left;
@@ -32,7 +33,6 @@ h1 {
 .loader {
     font-size: 2rem;
     font-weight: bold;
-
 }
 
 @keyframes plus {
@@ -77,4 +77,34 @@ h1 {
         border-right-color: #f90;
         border-bottom-color: #f6f;
     }
+}
+
+// CSS for Toast component
+.toast{
+    position: absolute;
+    float: left;
+    bottom: 10px;
+    left: 10px;
+
+    width: 400px;
+    height: 100px;
+    background: red;
+}
+.toast-picture {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    background: #E7E7E7
+}
+
+.toast-infos {
+    height: 100%;
+    width:75%;
+    display: inline-block;
+    background: #FAFAFA
+}
+
+.list-infos {
+    margin: 0;
+    padding: 0;
 }
